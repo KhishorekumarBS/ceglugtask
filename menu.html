@@ -1,0 +1,61 @@
+<html>
+<head>
+<style>
+body{ 
+background-image:url("rice.jpg");
+background-repeat:no-repeat;
+background-position:center;
+background-size: 100% 100% ;
+}
+td{
+padding:10;
+}
+.topic{
+font-style:italic;
+text-decoration:underline;
+}
+.head
+{
+text-align:center;
+color:blue;
+font-size:28;
+font-weight:bold;
+}
+table{
+margin-left:15%; 
+margin-right:15%;
+}
+</style>
+<script>
+var item=["idli","dosa","pongal","vada","chapati","parota"];
+var val=[0,0,0,0,0,0];
+var i;
+function increase(n)
+{	val[n]=val[n]+1;
+	var status = document.getElementById(n);
+	status.value=val[n];
+}
+function display()
+{	document.write("<center><h1>ITEMS ORDERED</h1><hr><br>");
+	for(i=0;i<item.length;i++)
+	{	if(val[i]!=0)	
+			document.write(item[i]+"----"+val[i]+"<br>");
+	}
+}	
+</script>
+</head>
+<body>
+<h1 class="topic head">BSK Restaurant</h1>
+<h2 class="head">MENU</h2>
+<table>
+<tr><th>FOOD ITEM</th><th></th><th>NO. OF ORDERS</th></tr>
+<tr><td>idli</td><td><input type=button onclick=increase(0) value=Add></td><td><input type="text" id="0"></td></tr>
+<tr><td>dosa</td><td><input type=button onclick=increase(1) value=Add></td><td><input type="text" id="1"></td></tr>
+<tr><td>pongal</td><td><input type=button onclick=increase(2) value=Add></td><td><input type="text" id="2"></td></tr>
+<tr><td>vada</td><td><input type=button onclick=increase(3) value=Add></td><td><input type="text" id="3"></td></tr>
+<tr><td>chapati</td><td><input type=button onclick=increase(4) value=Add></td><td><input type="text" id="4"></td></tr>
+<tr><td>parota</td><td><input type=button onclick=increase(5) value=Add></td><td><input type="text" id="5"></td></tr>
+<tr><td colspan=3><center><input type="submit" onclick=display()></td></tr> 
+</table>
+</body>
+</html>
